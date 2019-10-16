@@ -8,7 +8,7 @@ import Average from './Average'
 function App() {
   const [visible, setVisible] = useState(false)
   return (
-      <Average/>
+      <Info/>
     );
 }
 

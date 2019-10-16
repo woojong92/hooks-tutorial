@@ -1,17 +1,8 @@
 import React, { useReducer, useEffect } from 'react'
-
-function reducer(state, action) {
-    return {
-        ...state,
-        [action.name] : action.value
-    }
-}
-
+import useInputs from './useInputs'
 
 const Info = () => {
-    // const [name, setName] = useState('')
-    // const [nickname, setNickname] = useState('')
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, onChange] = useInputs({
         name: '',
         nickname: ''
     })
@@ -26,10 +17,6 @@ const Info = () => {
             console.log(name)
         }
     }, [name])
-
-    const onChange = e => {
-        dispatch(e.target)
-    }
 
     return (
         <div>
